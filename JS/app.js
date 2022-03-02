@@ -52,6 +52,15 @@ const displayPhoneDetails = (phoneDetails) => {
     const phoneDetailsField = document.getElementById('phone-details-field');
     const div = document.createElement('div')
     div.classList.add('col')
+    // div.innerHTML = '';
+    /* let releaseDate = phoneDetails.releaseDate
+    console.log(releaseDate);
+    if (releaseDate.length == 0) {
+        releaseDate = 'Not Released Yet'
+    }
+    else {
+        return releaseDate;
+    } */
     div.innerHTML = `
     <div class=" d-flex justify-content-center m-5">
                 <div class="d-flex align-items-center"><img src="${phoneDetails.image}" class=" mx-auto" alt="..."></div>
@@ -63,7 +72,8 @@ const displayPhoneDetails = (phoneDetails) => {
                 <p class="card-text ms-3">Chipset:${phoneDetails.mainFeatures.chipSet}</p>
                 <p class="card-text ms-3">Memory:${phoneDetails.mainFeatures.memory}</p>
                 <p class="card-text ms-3">Sensors:${phoneDetails.mainFeatures.sensors}</p>
-                <p class="card-text ms-3">ReleaseDate:${phoneDetails.releaseDate}</p>
+                <p class="card-text ms-3">ReleaseDate: ${phoneDetails.releaseDate ? phoneDetails.releaseDate : ' Not released Yet'}</p>
+                <p class="card-text ms-3">Others:</p>
                 <p class="card-text ms-3">WLAN:${phoneDetails.others?.WLAN}</p>
                 <p class="card-text ms-3">Bluetooth:${phoneDetails.others?.Bluetooth}</p>
                 <p class="card-text ms-3">USB:${phoneDetails.others?.USB}</p>
