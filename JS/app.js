@@ -11,17 +11,17 @@ const searchPhone = () => {
 
 const displaySearchResults = (phones) => {
     const searchResult = document.getElementById('search-result')
+    console.log('ok')
     searchResult.innerHTML = '';
     if (phones.length == 0) {
         const notFoundField = document.getElementById('not-found');
         notFoundField.innerHTML = `
         <h3 class="text-center mt-5 p-5">No Phone Found</h3>
         `
-        // notFoundField.appendChild(notFoundText);
 
     }
     else {
-        for (const phone of phones) {
+        for (const phone of phones.slice(0, 20)) {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
@@ -50,7 +50,6 @@ const searchDetails = (phoneId) => {
 // console.log(data.data.mainFeatures.storage)
 const displayPhoneDetails = (phoneDetails) => {
     const phoneDetailsField = document.getElementById('phone-details-field');
-    console.log(phoneDetails)
     const div = document.createElement('div')
     div.classList.add('col')
     div.innerHTML = `
