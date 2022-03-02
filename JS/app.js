@@ -1,4 +1,5 @@
-// -------------Search Phone 
+// -------------Search Phone--------------//
+
 const searchPhone = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -9,7 +10,9 @@ const searchPhone = () => {
         .then(res => res.json())
         .then(data => displaySearchResults(data.data));
 }
-// -----------Display Search Result 
+
+// -----------Display Search Result-------------// 
+
 const displaySearchResults = (phones) => {
     const searchResult = document.getElementById('search-result')
     console.log('ok')
@@ -41,6 +44,7 @@ const displaySearchResults = (phones) => {
         }
     }
 }
+
 //------------------------------- Phone Details --------------------------
 const searchDetails = (phoneId) => {
     const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`
@@ -48,7 +52,8 @@ const searchDetails = (phoneId) => {
         .then(res => res.json())
         .then(data => displayPhoneDetails(data.data))
 }
-// ------------------Display Details--------------
+
+// ------------------Display Details-------------- //
 const displayPhoneDetails = (phoneDetails) => {
     const phoneDetailsField = document.getElementById('phone-details-field');
     phoneDetailsField.innerHTML = '';
